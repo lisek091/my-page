@@ -1,6 +1,6 @@
 import React from 'react'
 
-const tekst = () => {
+const grid = () => {
     return (
         <div>
 
@@ -8,10 +8,4 @@ const tekst = () => {
     )
 }
 
-export default tekst
-
-
-
-
-
-
+export default grid
