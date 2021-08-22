@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { Palette } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
         },
         inputRoot: {
-            color: 'inherit',
+            color: theme.palette.secondary.main,
         },
         inputInput: {
             padding: theme.spacing(1, 1, 1, 0),
@@ -76,6 +77,14 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             [theme.breakpoints.up('md')]: {
                 display: 'none',
+            },
+        },
+        palette: {
+            primary: {
+                main: '#2196f3',
+            },
+            secondary: {
+                main: '#ef6c00',
             },
         },
     }),

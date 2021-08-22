@@ -7,7 +7,8 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import PrimarySearchAppBar from '../uielements/navbar'
 import LabelBottomNavigation from '../uielements/bottombar'
-
+import Header from '../uielements/header'
+import MediaCard from '../uielements/cards'
 
 
 
@@ -30,33 +31,31 @@ const Main = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12}>
                         <PrimarySearchAppBar />
+                        <Header sections={[]} title={"Witaj na stronie pokazowej moich skromnych zdolności! Zapraszam do obejrzenia wszystkich jej możliwości i kontaktu ze mną."} />
                     </Grid>
                     <Grid item xs={6}>
-
+                        <MediaCard />
                     </Grid>
                     <Grid item xs={6}>
-
+                        <MediaCard />
                     </Grid>
                     <Grid item xs={4}>
-
+                        <MediaCard />
                     </Grid>
                     <Grid item xs={4}>
-
+                        <MediaCard />
                     </Grid>
                     <Grid item xs={4}>
-
+                        <MediaCard />
                     </Grid>
                     <Grid item xs={12} >
-                        <div className="center">
-                            <LabelBottomNavigation />
-
-                        </div>
                     </Grid>
                 </Grid>
             </div>
         </Box>
     )
 }
+//<LabelBottomNavigation />
 
 /*
                 <div className="wrapper">
