@@ -10,10 +10,10 @@ import Typography from '@material-ui/core/Typography';
 import obrazek from './testowa.jpg'
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 500,
     },
     media: {
-        height: 140,
+        height: 200,
     },
 });
 

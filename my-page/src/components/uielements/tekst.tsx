@@ -1,12 +1,10 @@
 import React from 'react'
 
-const tekst = () => {
-    return (
-        <div>
-
-        </div>
-    )
-}
+const tekst = (
+    {
+        powitanie: "niewiem co pisac",
+    }
+)
 
 export default tekst
 

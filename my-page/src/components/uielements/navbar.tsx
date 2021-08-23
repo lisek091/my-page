@@ -1,5 +1,5 @@
 import React from 'react';
-import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { alpha, makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -12,10 +12,28 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
+import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Palette } from '@material-ui/icons';
-
+import clsx from 'clsx';
+import Drawer from '@material-ui/core/Drawer';
+import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import Ikonalis from './Ikona.jpg';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import PermPhoneMsgIcon from '@material-ui/icons/PermPhoneMsg';
+const drawerWidth = 240;
+let loginflag = false;
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         grow: {
@@ -55,7 +73,7 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center',
         },
         inputRoot: {
-            color: theme.palette.secondary.main,
+            color: theme.palette.primary.contrastText,
         },
         inputInput: {
             padding: theme.spacing(1, 1, 1, 0),
@@ -81,14 +99,76 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         palette: {
             primary: {
-                main: '#2196f3',
+                main: '#ffffff',
+                another: '#00ff77'
             },
             secondary: {
                 main: '#ef6c00',
             },
+            third: {
+                main: '#00ff77',
+            },
         },
+        root: {
+            display: 'flex',
+        },
+        appBar: {
+            transition: theme.transitions.create(['margin', 'width'], {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen,
+            }),
+        },
+        appBarShift: {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,
+            transition: theme.transitions.create(['margin', 'width'], {
+                easing: theme.transitions.easing.easeOut,
+                duration: theme.transitions.duration.enteringScreen,
+            }),
+        },
+        hide: {
+            display: 'none',
+        },
+        drawer: {
+            width: drawerWidth,
+            flexShrink: 0,
+        },
+        drawerPaper: {
+            width: drawerWidth,
+        },
+        drawerHeader: {
+            display: 'flex',
+            alignItems: 'center',
+            padding: theme.spacing(0, 1),
+            // necessary for content to be below app bar
+            ...theme.mixins.toolbar,
+            justifyContent: 'flex-end',
+        },
+        content: {
+            flexGrow: 1,
+            padding: theme.spacing(3),
+            transition: theme.transitions.create('margin', {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen,
+            }),
+            marginLeft: -drawerWidth,
+        },
+        contentShift: {
+            transition: theme.transitions.create('margin', {
+                easing: theme.transitions.easing.easeOut,
+                duration: theme.transitions.duration.enteringScreen,
+            }),
+            marginLeft: 0,
+        },
+        logreg: {
+            padding: "20px 15px"
+        },
+
     }),
 );
+
+
+
 
 export default function PrimarySearchAppBar() {
     const classes = useStyles();
@@ -114,6 +194,17 @@ export default function PrimarySearchAppBar() {
     const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
+    const [open, setOpen] = React.useState(false);
+
+    const handleDrawerOpen = () => {
+        setOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+        setOpen(false);
+    };
+
+
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
@@ -131,6 +222,7 @@ export default function PrimarySearchAppBar() {
         </Menu>
     );
 
+
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
@@ -143,16 +235,16 @@ export default function PrimarySearchAppBar() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="secondary">
+                <IconButton aria-label="show 0 new mails" color="inherit">
+                    <Badge badgeContent={0} color="secondary">
                         <MailIcon />
                     </Badge>
                 </IconButton>
                 <p>Messages</p>
             </MenuItem>
             <MenuItem>
-                <IconButton aria-label="show 11 new notifications" color="inherit">
-                    <Badge badgeContent={11} color="secondary">
+                <IconButton aria-label="show 0 new notifications" color="inherit">
+                    <Badge badgeContent={0} color="secondary">
                         <NotificationsIcon />
                     </Badge>
                 </IconButton>
@@ -171,18 +263,28 @@ export default function PrimarySearchAppBar() {
             </MenuItem>
         </Menu>
     );
+    const theme = useTheme();
+    function HomeIcon(props: SvgIconProps) {
+        return (
+            <SvgIcon {...props}>
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </SvgIcon>
+        );
+    }
 
     return (
         <div className={classes.grow}>
-            <AppBar position="static">
+            <AppBar position="fixed"
+                className={clsx(classes.appBar, {
+                    [classes.appBarShift]: open,
+                })}>
                 <Toolbar>
                     <IconButton
-                        edge="start"
-                        className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={handleMobileMenuOpen}
-                    //onlclick sam dodalem 
+                        onClick={handleDrawerOpen}
+                        edge="start"
+                        className={clsx(classes.menuButton, open && classes.hide)}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -194,7 +296,7 @@ export default function PrimarySearchAppBar() {
                             <SearchIcon />
                         </div>
                         <InputBase
-                            placeholder="Search…"
+                            placeholder="Wyszukiwarka"
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
@@ -204,16 +306,17 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <IconButton aria-label="show 0 new mails" color="inherit">
-                            <Badge badgeContent={0} color="secondary">
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton aria-label="show 0 new notifications" color="inherit">
-                            <Badge badgeContent={0} color="secondary">
-                                <NotificationsIcon />
-                            </Badge>
-                        </IconButton>
+                        <label className={classes.logreg}>
+                            <Button variant="contained" color="secondary" >
+                                Rejestracja
+                            </Button>
+                        </label>
+                        <span className={classes.logreg}>
+                            <Button variant="contained" color="secondary" >
+                                Zaloguj
+                            </Button>
+                        </span>
+
                         <IconButton
                             edge="end"
                             aria-label="account of current user"
@@ -221,6 +324,7 @@ export default function PrimarySearchAppBar() {
                             aria-haspopup="true"
                             onClick={handleProfileMenuOpen}
                             color="inherit"
+                            disabled={!loginflag}
                         >
                             <AccountCircle />
                         </IconButton>
@@ -237,9 +341,55 @@ export default function PrimarySearchAppBar() {
                         </IconButton>
                     </div>
                 </Toolbar>
+                <Drawer
+                    className={classes.drawer}
+                    variant="persistent"
+                    anchor="left"
+                    open={open}
+                    classes={{
+                        paper: classes.drawerPaper,
+                    }}
+                >
+                    <div className={classes.drawerHeader}>
+                        <IconButton onClick={handleDrawerClose}>
+                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                        </IconButton>
+                    </div>
+                    <Divider />
+                    <List>
+                        {['Strona główna', 'O mnie ', 'O stronie'].map((text, index) => (
+                            <ListItem button key={text}>
+                                <ListItemIcon>
+                                    <HomeIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider />
+                    <List>
+                        {['Kontakt', 'Podziękowanie'].map((text, index) => (
+                            <ListItem button key={text}>
+                                <ListItemIcon>{index % 2 === 0 ? <PermPhoneMsgIcon /> : <FavoriteIcon />}</ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider />
+                    <List>
+                        {['Github'].map((text, index) => (
+                            <ListItem button key={text}>
+                                <ListItemIcon>
+                                    <GitHubIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </List>
+                </Drawer>
             </AppBar>
             {renderMobileMenu}
             {renderMenu}
-        </div>
+        </div >
     );
 }
