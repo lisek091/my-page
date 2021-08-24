@@ -8,3 +8,7 @@
 .center {
   margin: center;
 }
+.center2 {
+  align-content: center !important;
+  width: max-content !important;
+}

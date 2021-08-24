@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const tekst = (
-    {
-        powitanie: "niewiem co pisac",
-    }
-)
+interface ShipmentCardProps {
+    key: string;
+    value: {}
+}
 
-export default tekst
+interface ShipmentCardState { }
+
+class ShipmentCard extends React.Component<ShipmentCardProps, ShipmentCardState> {
+}
+export default ShipmentCard
 
 
 

@@ -33,7 +33,7 @@ export default function MediaCard() {
                         kodzikdawny
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        Nie warto tego czytac ::))
+                        kjkjkhjkjh
                     </Typography>
                 </CardContent>
             </CardActionArea>

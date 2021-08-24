@@ -32,6 +32,8 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PermPhoneMsgIcon from '@material-ui/icons/PermPhoneMsg';
+import LoginButton from './loginbutton';
+import { Link, useHistory } from 'react-router-dom';
 const drawerWidth = 240;
 let loginflag = false;
 const useStyles = makeStyles((theme: Theme) =>
@@ -174,7 +176,7 @@ export default function PrimarySearchAppBar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
-
+    let history = useHistory();
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -202,6 +204,9 @@ export default function PrimarySearchAppBar() {
 
     const handleDrawerClose = () => {
         setOpen(false);
+    };
+    const handleHistory = () => {
+        history.push("/Register");
     };
 
 
@@ -306,15 +311,13 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <label className={classes.logreg}>
-                            <Button variant="contained" color="secondary" >
+                        <span className={classes.logreg}>
+                            <Button variant="contained" color="secondary" onClick={handleHistory} >
                                 Rejestracja
                             </Button>
-                        </label>
+                        </span>
                         <span className={classes.logreg}>
-                            <Button variant="contained" color="secondary" >
-                                Zaloguj
-                            </Button>
+                            <LoginButton />
                         </span>
 
                         <IconButton

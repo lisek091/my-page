@@ -7,13 +7,13 @@ import Header from '../uielements/header'
 import MediaCard from '../uielements/cards'
 import addsize from '../uielements/addsize.jpg'
 import useStyless from '../uielements/styles/style'
-
+import tekst from '../uielements/tekst';
 
 
 
 const Main = () => {
     const classes = useStyless();
-
+    const niemaco = "nie ma co ";
     return (
         <Fragment>
             <CssBaseline />
@@ -23,6 +23,8 @@ const Main = () => {
             <main>
                 <div className={classes.container}>
                     <Container maxWidth="lg">
+                        <div className={classes.powitanie} />
+                        <div className={classes.powitanie} />
                         <Typography variant="h4" align='center' className={classes.powitanie}  >
                             Witaj na stronie pokazowej moich skromnych zdolności!
                         </Typography>
