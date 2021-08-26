@@ -173,6 +173,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 export default function PrimarySearchAppBar() {
+    const napisrejestracja = "Register";
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -206,9 +207,16 @@ export default function PrimarySearchAppBar() {
         setOpen(false);
     };
     const handleHistory = () => {
-        history.push("/Register");
+        history.push('/Register');
     };
-
+    const handleHistory2 = () => {
+        history.push('/');
+    };
+    const handleHistoryGit = () => {
+        // history.push('https://github.com/lisek091/')
+        //window.location.replace('https://github.com/lisek091/')
+        window.open('https://github.com/lisek091/', '_blank');
+    };
 
 
     const menuId = 'primary-search-account-menu';
@@ -361,11 +369,12 @@ export default function PrimarySearchAppBar() {
                     <Divider />
                     <List>
                         {['Strona główna', 'O mnie ', 'O stronie'].map((text, index) => (
-                            <ListItem button key={text}>
+                            <ListItem button key={text} onClick={handleHistory2} >
                                 <ListItemIcon>
                                     <HomeIcon />
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
+
                             </ListItem>
                         ))}
                     </List>
@@ -381,7 +390,7 @@ export default function PrimarySearchAppBar() {
                     <Divider />
                     <List>
                         {['Github'].map((text, index) => (
-                            <ListItem button key={text}>
+                            <ListItem button key={text} onClick={handleHistoryGit}>
                                 <ListItemIcon>
                                     <GitHubIcon />
                                 </ListItemIcon>
