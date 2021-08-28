@@ -34,6 +34,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import PermPhoneMsgIcon from '@material-ui/icons/PermPhoneMsg';
 import LoginButton from './loginbutton';
 import { Link, useHistory } from 'react-router-dom';
+import './mypage.css';
 const drawerWidth = 240;
 let loginflag = false;
 const useStyles = makeStyles((theme: Theme) =>
@@ -49,6 +50,9 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.up('sm')]: {
                 display: 'block',
             },
+            '&:hover': {
+                backgroundColor: alpha(theme.palette.common.black, 0.25),
+            },
         },
         search: {
             position: 'relative',
@@ -57,6 +61,7 @@ const useStyles = makeStyles((theme: Theme) =>
             '&:hover': {
                 backgroundColor: alpha(theme.palette.common.white, 0.25),
             },
+
             marginRight: theme.spacing(2),
             marginLeft: 0,
             width: '100%',
@@ -301,8 +306,8 @@ export default function PrimarySearchAppBar() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
-                        Lisek091-Prezentacja
+                    <Typography className={classes.title} variant="h6" noWrap onClick={handleHistory2}>
+                        <span className='pojebalocss'>Lisek091-Prezentacja</span>
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
@@ -368,15 +373,14 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <Divider />
                     <List>
-                        {['Strona główna', 'O mnie ', 'O stronie'].map((text, index) => (
-                            <ListItem button key={text} onClick={handleHistory2} >
-                                <ListItemIcon>
-                                    <HomeIcon />
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                        <ListItem button key="Strona główna" onClick={handleHistory2}  >
+                            <ListItemIcon>
+                                <HomeIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Strona główna" />
 
-                            </ListItem>
-                        ))}
+                        </ListItem>
+
                     </List>
                     <Divider />
                     <List>
@@ -405,3 +409,15 @@ export default function PrimarySearchAppBar() {
         </div >
     );
 }
+
+/*
+                        {['Strona główna', 'O mnie ', 'O stronie'].map((text, index) => (
+                            <ListItem button key={text} onClick={handleHistory2} >
+                                <ListItemIcon>
+                                    <HomeIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+
+                            </ListItem>
+                        ))}
+                        */

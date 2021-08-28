@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function MediaCard() {
+export default function MediaCard(props: any) {
     const classes = useStyles();
 
     return (
@@ -32,10 +32,10 @@ export default function MediaCard() {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        kodzikdawny
+                        {props.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        kjkjkhjkjh
+                        {props.value}
                     </Typography>
                 </CardContent>
             </CardActionArea>

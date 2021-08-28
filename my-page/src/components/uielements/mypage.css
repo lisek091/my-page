@@ -12,3 +12,6 @@
   align-content: center !important;
   width: max-content !important;
 }
+.pojebalocss {
+  cursor: pointer;
+}

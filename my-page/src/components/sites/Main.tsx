@@ -33,13 +33,13 @@ const Main = () => {
                         </Typography>
                         <Grid container spacing={4} justify="center">
                             <Grid item xs={12} sm={6} md={4} >
-                                <MediaCard />
+                                <MediaCard title="pierwszy" value="cos dalej" />
                             </Grid>
                             <Grid item xs={12} sm={6} md={4}>
-                                <MediaCard />
+                                <MediaCard title="drugi" value="gdy Cie widze" />
                             </Grid>
                             <Grid item xs={12} sm={6} md={4}>
-                                <MediaCard />
+                                <MediaCard title="trzeci" value="kocham Cie bardziej" />
                             </Grid>
                         </Grid>
                     </Container>
