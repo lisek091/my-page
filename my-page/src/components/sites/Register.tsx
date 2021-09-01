@@ -5,20 +5,23 @@ import { Typography, Card, CardMedia, CardActions, CardContent, CssBaseline, App
 import Navbar from '../uielements/navbar';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import MediaCard from '../uielements/cards';
+import './sitescss/register.css';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             '& .MuiTextField-root': {
-                margin: theme.spacing(4),
-                width: '28ch',
+                margin: theme.spacing(1),
+                innerWidth: '100%',
                 display: 'block'
+
+
             },
         },
         blockchain: {
             verticalAlign: "center"
         },
         powitanie: {
-            padding: '70px'
+            padding: '70px 15px 25px'
         },
         block: {
             padding: "15px"
@@ -36,45 +39,50 @@ const Register = () => {
             <Navbar />
             <div className={classes.powitanie}>
 
-                <Container maxWidth="md">
+                <Container maxWidth="md" className={classes.powitanie}>
                     <Grid container spacing={4} justify="center">
-                        <Grid item xs={12} sm={6} >
-                            <form className={classes.root} noValidate autoComplete="off">
-                                <div className={classes.blockchain}>
-                                    <TextField
-                                        required
-                                        id="outlined-required"
-                                        label="Login"
-                                        //  defaultValue="Login"
-                                        variant="outlined"
-                                        autoFocus={true}
-                                    />
-                                    <TextField
-                                        required
-                                        id="outlined-required"
-                                        type="email"
-                                        label="Email"
-                                        //defaultValue="Email"
-                                        variant="outlined"
-                                    />
-                                    <TextField
-                                        id="outlined-password-input"
-                                        label="Hasło"
-                                        type="password"
-                                        autoComplete="current-password"
-                                        variant="outlined"
-                                        required={true}
+                        <Grid item xs={12} sm={2}>
+                        </Grid>
+                        <Grid item sm={12} md={4}>
 
-                                    />
-                                </div>
+                            <form className={classes.root} noValidate autoComplete="off">
+
+
+                                <TextField
+                                    required={true}
+                                    id="outlined-required"
+                                    type="email"
+                                    label="Email"
+                                    variant="outlined"
+                                    autoFocus={true}
+                                />
+                                <TextField
+                                    id="outlined-password-input"
+                                    label="Hasło"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    variant="outlined"
+                                    required={true}
+                                />
+
                             </form>
                         </Grid>
-                        <Grid item xs={12} sm={6} className={classes.block}>
-                            <h3>w jaki sposob to robic nikt tego nie wie</h3>
-                            <h3>w jaki sposob to robic nikt tego nie wie</h3>
-                            <h3>w jaki sposob to robic nikt tego nie wie</h3>
+                        <Grid item sm={12} md={4} className={classes.root}>
+                            <Typography align="left">
+
+                                Dla możliwości dodatkowego testowania strony proponuje zarejestrować się.
+
+                            </Typography>
+                            <Typography align="left">
+
+                                Możesz utworzyć losowe hasło bo konto zostanie usunięte po 30 dniach.
+                                Zapraszam do sekcji gier jeśli nie chesz się rejestrować.
+                            </Typography>
+
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} sm={2}>
+                        </Grid>
+                        <Grid item sm={12} justifyContent='center'>
                             <MediaCard />
                         </Grid>
                     </Grid>

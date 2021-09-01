@@ -12,7 +12,7 @@ import obrazek from './testowa.jpg'
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 500,
+        width: '100%',
     },
     media: {
         height: 200,

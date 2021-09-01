@@ -35,6 +35,7 @@ import PermPhoneMsgIcon from '@material-ui/icons/PermPhoneMsg';
 import LoginButton from './loginbutton';
 import { Link, useHistory } from 'react-router-dom';
 import './mypage.css';
+import { EventHandler } from 'react';
 const drawerWidth = 240;
 let loginflag = false;
 const useStyles = makeStyles((theme: Theme) =>
@@ -217,6 +218,12 @@ export default function PrimarySearchAppBar() {
     const handleHistory2 = () => {
         history.push('/');
     };
+    const handleHistory3 = () => {
+        history.push('/About');
+    };
+    const handleHistory4 = () => {
+        history.push('/CV');
+    };
     const handleHistoryGit = () => {
         // history.push('https://github.com/lisek091/')
         //window.location.replace('https://github.com/lisek091/')
@@ -373,11 +380,25 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <Divider />
                     <List>
-                        <ListItem button key="Strona główna" onClick={handleHistory2}  >
+                        <ListItem button key="Strona główna" onClick={handleHistory2}   >
                             <ListItemIcon>
                                 <HomeIcon />
                             </ListItemIcon>
                             <ListItemText primary="Strona główna" />
+
+                        </ListItem>
+                        <ListItem button key="O mnie" onClick={handleHistory3}   >
+                            <ListItemIcon>
+                                <HomeIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="O mnie" />
+
+                        </ListItem>
+                        <ListItem button key="CV" onClick={handleHistory4} >
+                            <ListItemIcon>
+                                <HomeIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="CV" />
 
                         </ListItem>
 
