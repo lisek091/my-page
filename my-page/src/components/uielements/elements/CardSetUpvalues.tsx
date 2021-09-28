@@ -1,82 +1,82 @@
 export const cardValues = {
-    pierwsza: {
-        name: "wowlo",
+    1: {
+        name: "wowlo1",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 1,
     },
-    druga: {
-        name: "wowlo",
+    2: {
+        name: "wowlo2",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 2,
     },
-    trzecia: {
-        name: "wowlo",
+    3: {
+        name: "wowlo3",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 3,
     },
-    cztery: {
-        name: "wowlo",
+    4: {
+        name: "wowlo4",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 4,
     },
-    piec: {
-        name: "wowlo",
+    5: {
+        name: "wowlo5",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 5,
     },
-    szesc: {
-        name: "wowlo",
+    6: {
+        name: "wowlo6",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 6,
     },
-    siem: {
-        name: "wowlo",
+    7: {
+        name: "wowlo7",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 7,
     },
-    osiem: {
-        name: "wowlo",
+    8: {
+        name: "wowlo8",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 8,
     },
-    dziew: {
-        name: "wowlo",
+    9: {
+        name: "wowlo9",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 9,
     },
-    dies: {
-        name: "wowlo",
+    10: {
+        name: "wowlo10",
         value: "dkasdfas",
         link1: "",
         link2: "",
-        picture: "",
+        picture: '../imgs/cardimg.jpg',
         id: 10,
     },
 
