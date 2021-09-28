@@ -1,6 +1,4 @@
-import React from 'react'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-
 
 const useStyless = makeStyles((theme: Theme) =>
     createStyles({
@@ -27,6 +25,11 @@ const useStyless = makeStyles((theme: Theme) =>
         powitanie: {
             padding: '20px'
         },
+        oneforall: {
+            background: 'linear-gradient(75deg, #7DB7E7 15%, #D6DBC6 40%)',
+            border: 0,
+            borderRadius: 3
+        }
 
     }),
 

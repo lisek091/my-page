@@ -6,6 +6,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './mypage.css';
+//import Theme from '../styles/MyTheme';
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -15,8 +17,10 @@ const useStyles = makeStyles((theme: Theme) =>
                 width: '29ch',
             },
         },
+
     }),
 );
+
 const StyledMenu = withStyles({
     paper: {
         border: '1px solid #d3d4d5',
@@ -46,7 +50,10 @@ const StyledMenuItem = withStyles((theme) => ({
              },
          },
          */
+        margin: "center"
     },
+
+
 }))(MenuItem);
 
 export default function CustomizedMenus() {
@@ -92,11 +99,12 @@ export default function CustomizedMenus() {
                         <TextField id="standard-basic" label="Hasło" />
                     </form>
                 </StyledMenuItem>
-                <StyledMenuItem>
+                <StyledMenuItem className={classes.root}>
                     <span >
                         <Button
                             variant="contained"
                             color="primary"
+
                         //onClick={handleClick}
                         >
                             Zaloguj się

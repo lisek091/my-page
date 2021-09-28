@@ -5,7 +5,6 @@ import {
   Route,
 } from "react-router-dom";
 import Main from './components/sites/Main';
-import './App.css';
 import About from './components/sites/About';
 import Register from './components/sites/Register';
 function App() {

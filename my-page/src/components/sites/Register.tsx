@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
 import TextField from '@material-ui/core/TextField';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Typography, Card, CardMedia, CardActions, CardContent, CssBaseline, AppBar, Grid, Toolbar, Container, Button, ButtonGroup, Box } from '@material-ui/core'
-import Navbar from '../uielements/navbar';
-import { Alert, AlertTitle } from '@material-ui/lab';
-import MediaCard from '../uielements/cards';
+import { Typography, CssBaseline, Grid, Container } from '@material-ui/core'
+import Navbar from '../uielements/nav/navbar';
+import MediaCard from '../uielements/elements/cards';
 import './sitescss/register.css';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -82,9 +81,8 @@ const Register = () => {
                         </Grid>
                         <Grid item xs={12} sm={2}>
                         </Grid>
-                        <Grid item sm={12} justifyContent='center'>
-                            <MediaCard />
-                        </Grid>
+
+
                     </Grid>
 
                 </Container>

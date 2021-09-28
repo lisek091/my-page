@@ -15,7 +15,6 @@ import MailIcon from '@material-ui/icons/Mail';
 import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { Palette } from '@material-ui/icons';
 import clsx from 'clsx';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
@@ -24,18 +23,17 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Ikonalis from './Ikona.jpg';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PermPhoneMsgIcon from '@material-ui/icons/PermPhoneMsg';
-import LoginButton from './loginbutton';
-import { Link, useHistory } from 'react-router-dom';
+import LoginButton from '../elements/loginbutton';
+import { useHistory } from 'react-router-dom';
 import './mypage.css';
-import { EventHandler } from 'react';
+
+
+
 const drawerWidth = 240;
 let loginflag = false;
 const useStyles = makeStyles((theme: Theme) =>
@@ -179,7 +177,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 export default function PrimarySearchAppBar() {
-    const napisrejestracja = "Register";
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -380,7 +377,7 @@ export default function PrimarySearchAppBar() {
                     </div>
                     <Divider />
                     <List>
-                        <ListItem button key="Strona główna" onClick={handleHistory2}   >
+                        <ListItem button key="Strona główna" onClick={handleHistory2} >
                             <ListItemIcon>
                                 <HomeIcon />
                             </ListItemIcon>

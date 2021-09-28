@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useStyless from './styles/style';
+import useStyless from '../styles/style';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -23,8 +23,6 @@ export default function Header(props: { sections: any; title: string; }) {
                     align="center"
                     noWrap
                     display="block"
-
-
                     className={classes.toolbarTitle}
                 >
                     {title}

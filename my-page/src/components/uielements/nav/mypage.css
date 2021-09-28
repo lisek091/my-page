@@ -1,0 +1,17 @@
+.MainDiv {
+  text-align: center;
+}
+.MainDiv img {
+  width: auto;
+  height: auto;
+}
+.center {
+  margin: center;
+}
+.center2 {
+  align-content: center !important;
+  width: max-content !important;
+}
+.pojebalocss {
+  cursor: pointer;
+}
