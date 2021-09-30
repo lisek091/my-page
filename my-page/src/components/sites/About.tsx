@@ -1,9 +1,15 @@
 import React from 'react'
+import PrimarySearchAppBar from '../uielements/nav/navbar'
 
 const About = () => {
     return (
         <div>
-            Work in progress
+            <nav>
+                <PrimarySearchAppBar />
+            </nav>
+            <main>
+                Work in progress
+            </main>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material/styles';
 
 const useStyless = makeStyles((theme: Theme) =>
     createStyles({
@@ -28,8 +29,22 @@ const useStyless = makeStyles((theme: Theme) =>
         oneforall: {
             background: 'linear-gradient(75deg, #7DB7E7 15%, #D6DBC6 40%)',
             border: 0,
-            borderRadius: 3
-        }
+            borderRadius: 3,
+        },
+        Movedown: {
+            minHeight: "76px"
+        },
+        CVLeft: {
+            background: 'linear-gradient(75deg, #00a152 15%, #00a152 40%)',
+            border: 0,
+            borderRadius: 0,
+        },
+        CVRight: {
+            background: 'linear-gradient(75deg, #33eaff 15%, #33eaff 40%)',
+            border: 0,
+            borderRadius: 0,
+
+        },
 
     }),
 
