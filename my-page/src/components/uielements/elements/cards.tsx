@@ -11,9 +11,9 @@ import { cardValues } from './CardSetUpvalues';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import obrazek from '../imgs/cardimg.jpg'
-import { setInterval } from 'timers';
+import { clearTimeout, setTimeout } from 'timers';
 import IdleTimer from 'react-idle-timer';
-
+import ja from '../imgs/cardimg2.jpg';
 const useStyles = makeStyles({
     root: {
         width: '100%',
@@ -38,7 +38,6 @@ const useStyles = makeStyles({
 
 
 export default function MediaCard() {
-
     const wtfiamdoing = Object.values(cardValues);
     const classes = useStyles();
     const [card, setCard] = useState(1);
@@ -49,21 +48,32 @@ export default function MediaCard() {
             </Stack>
         )
     }
+    const interval = 3000;
     const idleTimerRef: any = useRef(null);
     const onIdle = () => {
+        // (card === 10) ? setCard(1) : setCard(card + 1);
+    }
+    const changeCard = () => {
         (card === 10) ? setCard(1) : setCard(card + 1);
     }
+
     const handleChange = (event: any, page: number) => {
         setCard(page);
+        clearTimeout(myinterval);
     }
+    const onClick = () => {
+        window.open('https://github.com/lisek091/my-page/commits/master', '_blank');
+    }
+    let myinterval = setTimeout(changeCard, interval);
+
     const CardTable = () => {
         return (
-            < Card className={classes.root}  >
+            < Card className={classes.root} onClick={onClick} >
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
                         component="img"
-                        image={obrazek}
+                        image={(card % 2 === 0) ? obrazek : ja}
                         alt="Code Screen"
                     />
                     <CardContent>
@@ -88,8 +98,9 @@ export default function MediaCard() {
     }
 
     return (
+
         <div className={classes.order}>
-            <IdleTimer ref={idleTimerRef} timeout={5000} onIdle={onIdle} />
+            <IdleTimer ref={idleTimerRef} timeout={15000} onIdle={onIdle} />
             <CardTable />
             <div className={classes.pagigig}>
                 <Paginacja />

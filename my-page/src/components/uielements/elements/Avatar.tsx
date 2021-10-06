@@ -62,6 +62,7 @@ export default function ImageAvatars() {
             >
                 <MenuItem onClick={handleClose} className={classes.root}>
                     <Avatar className={classes.root}
+
                         alt="Mateusz Lisowski"
                         src={JA}
                         sx={{ width: 500, height: 650 }}
@@ -73,5 +74,6 @@ export default function ImageAvatars() {
     );
 }
 /*width: 2649, height: 3353
-
++<Paper sx={{ display: { xs: 'none', md: 'block' } }} />
++<Box component="button" sx={{ display: { xs: 'none', md: 'block' } }} />
 */

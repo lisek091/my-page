@@ -15,3 +15,10 @@
 .pojebalocss {
   cursor: pointer;
 }
+.twoiteminrow:hover {
+  background-color: rgb(72, 228, 58);
+  cursor: pointer;
+}
+.wprawo {
+  float: right;
+}

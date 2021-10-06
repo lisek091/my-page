@@ -1,3 +1,25 @@
 .right {
   text-align: right;
 }
+.cvleft {
+  background-color: rgb(10, 153, 82);
+}
+.center {
+  padding-left: 10px;
+}
+.gitlink {
+  width: 100%;
+  text-align: center;
+}
+.giticon:hover {
+  background-color: rgb(65, 78, 78);
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.linkicon:hover {
+  background-color: rgb(102, 203, 243);
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
